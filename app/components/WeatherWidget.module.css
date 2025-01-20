@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  height: 260px;
+  padding: 24px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f5f5f5, #e6e6e6);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15),
+    -6px -6px 12px rgba(255, 255, 255, 0.9);
+  transition: transform 300ms, box-shadow 300ms;
+}
+
+.container:hover {
+  box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2),
+    -8px -8px 15px rgba(255, 255, 255, 0.95);
+}
+
+.container.refreshing {
+  background: linear-gradient(145deg, #e6e6e6, #f5f5f5);
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 40px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 16px 0;
+}
+
+.button {
+  padding: 11px 24px;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.8);
+  transition: background-color 300ms, transform 200ms;
+}
+
+.button:hover:not([disabled]) {
+  background-color: #0056b3;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #007bff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1000ms linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
